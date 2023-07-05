@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 
-def enviar_correo(remitente, destinatario, asunto, mensaje, contraseña):
+def enviar_correo(remitente, destinatario, asunto, mensaje, contrasenia):
     """Envía un correo electrónico utilizando el servidor SMTP"""
     try:
         # Crea una conexión segura con el servidor SMTP
@@ -11,7 +11,7 @@ def enviar_correo(remitente, destinatario, asunto, mensaje, contraseña):
         servidor.starttls()
 
         # Inicia sesión en la cuenta de correo del remitente
-        servidor.login(remitente, contraseña)
+        servidor.login(remitente, contrasenia)
 
         # Crea un mensaje multipartito
         mensaje_correo = MIMEMultipart()
